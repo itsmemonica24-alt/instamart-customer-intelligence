@@ -1,0 +1,165 @@
+ticket_id,customer_id,true_category,status,category,reason,tokens_used,retries
+T0024,C0486,fraud,classified_json,fraud,keyword match,91,0
+T0073,C0080,billing,classified_json,billing,keyword match,87,0
+T0095,C1087,technical,classified_json,billing,keyword match,89,0
+T0159,C1172,none,skipped_empty,,,0,0
+T0080,C0910,fraud,classified_json,billing,keyword match,91,0
+T0124,C0139,fraud,classified_json,billing,keyword match,91,0
+T0061,C0812,billing,classified_json,billing,keyword match,83,0
+T0118,C0355,delivery,classified_json,delivery,keyword match,86,0
+T0037,C1156,billing,classified_json,billing,keyword match,87,0
+T0002,C0881,delivery,classified_json,delivery,keyword match,85,1
+T0163,C0322,delivery,flagged_long,,,0,0
+T0031,C0958,technical,classified_json,billing,keyword match,89,0
+T0047,C0756,technical,classified_json,technical,keyword match,78,0
+T0063,C0892,technical,classified_json,technical,keyword match,78,0
+T0121,C0852,billing,classified_keyword,billing,The customer appears to have a billing-related problem.,91,0
+T0139,C0829,technical,classified_json,technical,keyword match,94,0
+T0115,C1025,technical,classified_json,technical,keyword match,78,0
+T0123,C0674,technical,classified_json,technical,keyword match,78,0
+T0116,C0294,fraud,flagged_invalid_output,,,91,1
+T0136,C0891,fraud,classified_json,fraud,keyword match,85,0
+T0008,C1177,fraud,classified_json,fraud,keyword match,91,0
+T0102,C0985,delivery,classified_json,delivery,keyword match,89,0
+T0072,C0218,fraud,classified_json,billing,keyword match,91,0
+T0101,C1151,billing,classified_json,billing,keyword match,87,0
+T0059,C0764,technical,classified_json,technical,keyword match,78,0
+T0049,C0078,billing,classified_json,billing,keyword match,87,0
+T0153,C0150,billing,classified_json,billing,keyword match,83,1
+T0050,C0117,delivery,classified_keyword,delivery,The customer appears to have a delivery-related problem.,89,0
+T0147,C0125,technical,classified_json,billing,keyword match,89,0
+T0074,C1119,delivery,classified_json,delivery,keyword match,85,0
+T0156,C0328,fraud,classified_json,fraud,keyword match,91,0
+T0145,C0751,billing,classified_json,billing,keyword match,87,0
+T0053,C0447,billing,classified_json,billing,keyword match,87,0
+T0134,C0608,delivery,classified_json,delivery,keyword match,89,0
+T0039,C0298,technical,classified_json,technical,keyword match,94,1
+T0016,C0962,fraud,flagged_invalid_output,,,91,0
+T0055,C1063,technical,classified_json,technical,keyword match,94,0
+T0130,C0692,delivery,classified_json,delivery,keyword match,89,0
+T0099,C1000,technical,classified_json,technical,keyword match,94,0
+T0062,C0403,delivery,classified_json,delivery,keyword match,85,0
+T0013,C0507,billing,classified_keyword,billing,The customer appears to have a billing-related problem.,91,0
+T0137,C0978,billing,classified_json,billing,keyword match,87,0
+T0152,C0530,fraud,classified_json,billing,keyword match,91,1
+T0144,C0521,fraud,classified_json,billing,keyword match,91,0
+T0094,C0863,delivery,classified_json,delivery,keyword match,89,0
+T0021,C0909,billing,classified_json,billing,keyword match,83,0
+T0077,C0082,billing,classified_json,billing,keyword match,83,0
+T0036,C0173,fraud,classified_json,billing,keyword match,91,0
+T0113,C0077,billing,classified_json,billing,keyword match,83,0
+T0060,C0784,fraud,classified_json,fraud,keyword match,91,0
+T0043,C0942,technical,classified_json,technical,keyword match,78,1
+T0048,C0733,fraud,classified_json,fraud,keyword match,85,0
+T0154,C1071,delivery,flagged_invalid_output,,,89,0
+T0125,C1156,billing,classified_keyword,billing,The customer appears to have a billing-related problem.,87,0
+T0146,C1024,delivery,classified_json,delivery,keyword match,86,0
+T0107,C0783,technical,classified_json,technical,keyword match,78,0
+T0011,C0233,technical,classified_json,technical,keyword match,94,0
+T0017,C0028,billing,classified_json,billing,keyword match,87,0
+T0111,C1033,technical,classified_json,technical,keyword match,78,1
+T0041,C0464,billing,classified_json,billing,keyword match,87,0
+T0120,C0208,fraud,classified_json,fraud,keyword match,91,0
+T0122,C0404,delivery,classified_json,delivery,keyword match,85,0
+T0001,C0851,billing,classified_json,billing,keyword match,87,0
+T0064,C0848,fraud,classified_json,fraud,keyword match,91,0
+T0092,C0585,fraud,classified_json,fraud,keyword match,85,0
+T0038,C0882,delivery,classified_json,delivery,keyword match,85,0
+T0155,C0285,technical,classified_keyword,technical,The customer appears to have a technical-related problem.,98,1
+T0104,C0815,fraud,classified_json,fraud,keyword match,85,0
+T0012,C0335,fraud,classified_json,billing,keyword match,91,0
+T0084,C0569,fraud,flagged_invalid_output,,,91,0
+T0051,C1049,technical,classified_json,technical,keyword match,78,0
+T0143,C0339,technical,budget_exhausted,,,0,0
+T0035,C1175,technical,budget_exhausted,,,0,0
+T0028,C1036,fraud,budget_exhausted,,,0,0
+T0100,C0754,fraud,budget_exhausted,,,0,0
+T0022,C1160,delivery,budget_exhausted,,,0,0
+T0082,C0168,delivery,budget_exhausted,,,0,0
+T0127,C0976,technical,budget_exhausted,,,0,0
+T0162,C0665,delivery,flagged_long,,,0,0
+T0109,C1080,billing,budget_exhausted,,,0,0
+T0046,C0442,delivery,budget_exhausted,,,0,0
+T0081,C0559,billing,budget_exhausted,,,0,0
+T0007,C0682,technical,budget_exhausted,,,0,0
+T0068,C0208,fraud,budget_exhausted,,,0,0
+T0085,C0031,billing,budget_exhausted,,,0,0
+T0075,C0901,technical,budget_exhausted,,,0,0
+T0052,C1005,fraud,budget_exhausted,,,0,0
+T0066,C1199,delivery,budget_exhausted,,,0,0
+T0151,C1011,technical,budget_exhausted,,,0,0
+T0131,C0069,technical,budget_exhausted,,,0,0
+T0006,C0177,delivery,budget_exhausted,,,0,0
+T0135,C0303,technical,budget_exhausted,,,0,0
+T0079,C1128,technical,budget_exhausted,,,0,0
+T0040,C0256,fraud,budget_exhausted,,,0,0
+T0093,C0131,billing,budget_exhausted,,,0,0
+T0089,C0860,billing,budget_exhausted,,,0,0
+T0034,C1188,delivery,budget_exhausted,,,0,0
+T0033,C0714,billing,budget_exhausted,,,0,0
+T0160,C0670,none,skipped_empty,,,0,0
+T0087,C0797,technical,budget_exhausted,,,0,0
+T0009,C0758,billing,budget_exhausted,,,0,0
+T0108,C0340,fraud,budget_exhausted,,,0,0
+T0054,C0571,delivery,budget_exhausted,,,0,0
+T0025,C0610,billing,budget_exhausted,,,0,0
+T0004,C0721,fraud,budget_exhausted,,,0,0
+T0148,C1057,fraud,budget_exhausted,,,0,0
+T0088,C0852,fraud,budget_exhausted,,,0,0
+T0030,C0015,delivery,budget_exhausted,,,0,0
+T0067,C0704,technical,budget_exhausted,,,0,0
+T0029,C0885,billing,budget_exhausted,,,0,0
+T0129,C0237,billing,budget_exhausted,,,0,0
+T0105,C0063,billing,budget_exhausted,,,0,0
+T0045,C0628,billing,budget_exhausted,,,0,0
+T0069,C0491,billing,budget_exhausted,,,0,0
+T0010,C1190,delivery,budget_exhausted,,,0,0
+T0023,C0400,technical,budget_exhausted,,,0,0
+T0106,C0197,delivery,budget_exhausted,,,0,0
+T0015,C0488,technical,budget_exhausted,,,0,0
+T0091,C0796,technical,budget_exhausted,,,0,0
+T0126,C0996,delivery,budget_exhausted,,,0,0
+T0096,C0324,fraud,budget_exhausted,,,0,0
+T0149,C0770,billing,budget_exhausted,,,0,0
+T0070,C1150,delivery,budget_exhausted,,,0,0
+T0026,C0677,delivery,budget_exhausted,,,0,0
+T0097,C0932,billing,budget_exhausted,,,0,0
+T0132,C0282,fraud,budget_exhausted,,,0,0
+T0027,C0232,technical,budget_exhausted,,,0,0
+T0119,C0629,technical,budget_exhausted,,,0,0
+T0157,C1107,none,skipped_empty,,,0,0
+T0058,C0287,delivery,budget_exhausted,,,0,0
+T0110,C0056,delivery,budget_exhausted,,,0,0
+T0018,C1135,delivery,budget_exhausted,,,0,0
+T0032,C1139,fraud,budget_exhausted,,,0,0
+T0003,C0591,technical,budget_exhausted,,,0,0
+T0042,C0508,delivery,budget_exhausted,,,0,0
+T0056,C0140,fraud,budget_exhausted,,,0,0
+T0114,C0619,delivery,budget_exhausted,,,0,0
+T0083,C0356,technical,budget_exhausted,,,0,0
+T0138,C0720,delivery,budget_exhausted,,,0,0
+T0057,C1199,billing,budget_exhausted,,,0,0
+T0076,C0418,fraud,budget_exhausted,,,0,0
+T0019,C0579,technical,budget_exhausted,,,0,0
+T0103,C0499,technical,budget_exhausted,,,0,0
+T0164,C0794,delivery,flagged_long,,,0,0
+T0090,C0322,delivery,budget_exhausted,,,0,0
+T0112,C0432,fraud,budget_exhausted,,,0,0
+T0133,C0717,billing,budget_exhausted,,,0,0
+T0014,C0579,delivery,budget_exhausted,,,0,0
+T0158,C1106,none,skipped_empty,,,0,0
+T0020,C0460,fraud,budget_exhausted,,,0,0
+T0142,C0605,delivery,budget_exhausted,,,0,0
+T0086,C1132,delivery,budget_exhausted,,,0,0
+T0141,C0376,billing,budget_exhausted,,,0,0
+T0044,C0862,fraud,budget_exhausted,,,0,0
+T0117,C0465,billing,budget_exhausted,,,0,0
+T0078,C0586,delivery,budget_exhausted,,,0,0
+T0140,C1173,fraud,budget_exhausted,,,0,0
+T0071,C0966,technical,budget_exhausted,,,0,0
+T0161,C0202,delivery,flagged_long,,,0,0
+T0150,C0622,delivery,budget_exhausted,,,0,0
+T0065,C0205,billing,budget_exhausted,,,0,0
+T0128,C0467,fraud,budget_exhausted,,,0,0
+T0005,C0404,billing,budget_exhausted,,,0,0
+T0098,C0343,delivery,budget_exhausted,,,0,0

@@ -1,0 +1,54 @@
+{
+  "run_id": "S6_becf058d",
+  "scenario_id": "S6",
+  "user_message": "Refund for order ORD-999999 please.",
+  "messages": [
+    {
+      "role": "system",
+      "content": "AGENT\nYou are an Instamart refund agent. Use the supplied tools to check orders\nand policies before deciding. Never invent an order or refund amount.\nOnly completed orders delivered in more than 45 minutes qualify.\nRefunds up to INR 1000 may be issued automatically. Refunds above INR 1000\nmust be escalated to a human and must not be issued automatically.\nCancelled and on-time orders must not receive refunds.\nIf a tool reports an error, respect it. Return a concise final answer\nbeginning with REFUND:, ESCALATE:, DENIED:, or NOT_FOUND: as appropriate."
+    },
+    {
+      "role": "user",
+      "content": "Refund for order ORD-999999 please."
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_1",
+          "name": "get_order",
+          "arguments": {
+            "order_id": "ORD-999999"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_1",
+      "name": "get_order",
+      "content": "{\"error\": \"order not found\"}"
+    }
+  ],
+  "tokens_used": 280,
+  "llm_calls": 2,
+  "steps": [
+    {
+      "step": 1,
+      "tool_name": "get_order",
+      "arguments": {
+        "order_id": "ORD-999999"
+      },
+      "observation": {
+        "error": "order not found"
+      }
+    }
+  ],
+  "executed_tools": [
+    "get_order"
+  ],
+  "finished": true,
+  "status": "NOT_FOUND",
+  "final_answer": "NOT_FOUND: no such order."
+}

@@ -1,0 +1,92 @@
+
+TASK 1 — RFM
+Customers with completed orders: 1175
+Recency median/min/max: 19.0/0/180
+Frequency mean/max: 9.46/33
+Monetary mean/max: INR 2,552.06/INR 14,766.55
+
+TASK 2 — K-MEANS EVALUATION
+ K inertia silhouette
+ 2  1820.8      0.465
+ 3  1268.2      0.445
+ 4   743.1      0.526
+ 5   617.4      0.480
+ 6   503.2      0.482
+ 7   408.5      0.416
+ 8   366.5      0.412
+Chosen K=4: the elbow and stronger silhouette at K=4 support four actionable groups.
+Inertia always decreases as K increases because extra centroids reduce within-cluster distances. K=8's lower inertia alone is not enough: too many groups can over-fragment customers and make campaigns harder to act on.
+
+TASK 3 — SEGMENT PROFILES
+ segment_id  size mean_recency mean_frequency mean_monetary                segment_name                                                  recommended_action
+          0   436        28.86           3.77  INR 1,057.62 Dormant Low-Spend Customers                                                                 NaN
+          1   138        24.12           6.77  INR 7,129.70                     Premium Protect loyalty with personalised service and relevant cross-sells.
+          2   419         8.77          19.40  INR 3,410.02     High-Frequency Regulars                     Use replenishment reminders and useful bundles.
+          3   182       109.04           2.20    INR 685.99 Dormant Low-Spend Customers                                                                 NaN
+PCA explained variance ratios: [0.63427875 0.21803762]
+Cluster IDs are arbitrary labels, not an ordered ranking. Premium is the cluster with the highest mean monetary value.
+
+TASK 4 — LAPSE COHORT
+Cohort size: 1156
+Lapsed: 443 (38.32%)
+Not lapsed: 713
+No order dated 2025-09-01 or later enters predictive features; Task 3 segment labels are not features.
+
+TASK 5 — SPLIT, MISSING VALUES AND BASELINE
+Train/test rows: 924/232
+Missing values by feature: {'recency': 0, 'frequency': 0, 'monetary': 0, 'avg_discount_pct': 0, 'cancellation_rate': 0, 'avg_delivery_minutes': 0, 'age': 0, 'tenure_days': 0, 'city': 0, 'gender': 0, 'favourite_category': 0}
+Full cohort frequency mean: 8.0285
+Training-only frequency mean (before scaling): 8.1147
+These means can differ because the training split contains 80% of the cohort; preprocessing must be fitted on training rows only.
+Always predict not lapsed: accuracy=0.616, precision_lapsed=0.000, recall_lapsed=0.000, F1_lapsed=0.000, confusion_matrix [[TN, FP], [FN, TP]]=[[143, 0], [89, 0]]
+
+TASK 6 — TUNED MODELS AND TEST METRICS
+Logistic best params: {'model__C': 100}; best CV F1=0.6506
+Logistic test: accuracy=0.728, precision_lapsed=0.644, recall_lapsed=0.652, F1_lapsed=0.648, confusion_matrix [[TN, FP], [FN, TP]]=[[111, 32], [31, 58]]
+Random Forest best params: {'model__max_depth': 8, 'model__min_samples_leaf': 10}; best CV F1=0.6811
+Random Forest test: accuracy=0.737, precision_lapsed=0.659, recall_lapsed=0.652, F1_lapsed=0.655, confusion_matrix [[TN, FP], [FN, TP]]=[[113, 30], [31, 58]]
+
+MODEL CHOICE
+Selected Random Forest; lapsed-class test F1=0.6554.
+Missing a soon-to-lapse customer may lose future orders, so recall matters. Wrongly targeting loyal customers wastes discounts and campaign capacity, so precision matters too. The selected model balances these costs using held-out F1; the retention team should still set a threshold that fits its budget and incentive margin.
+
+TASK 7 — TRAIN-ONLY OVERSAMPLING
+Original training counts: {0: 570, 1: 354}
+Balanced training counts: {0: 570, 1: 570}
+Unbalanced logistic: accuracy=0.728, precision_lapsed=0.644, recall_lapsed=0.652, F1_lapsed=0.648, confusion_matrix [[TN, FP], [FN, TP]]=[[111, 32], [31, 58]]
+Oversampled logistic: accuracy=0.716, precision_lapsed=0.589, recall_lapsed=0.854, F1_lapsed=0.697, confusion_matrix [[TN, FP], [FN, TP]]=[[90, 53], [13, 76]]
+Recall often moves most: more actual lapsing customers are flagged, but unchanged or lower precision can mean more loyal customers receive offers. Use this trade-off to plan campaign capacity.
+
+TASK 8A — FEATURE INTERPRETATION
+Top five Random Forest importances:
+             feature importance
+           frequency     0.2796
+            monetary     0.2712
+             recency     0.1151
+avg_delivery_minutes     0.0613
+   cancellation_rate     0.0523
+Logistic coefficient signs:
+recency: 0.0396 (positive); positive coefficients increase estimated lapse odds, negative coefficients decrease them.
+frequency: -1.6982 (negative); positive coefficients increase estimated lapse odds, negative coefficients decrease them.
+monetary: 0.2846 (positive); positive coefficients increase estimated lapse odds, negative coefficients decrease them.
+
+TASK 8B — MODEL PERSISTENCE
+Saved: outputs\lapse_model.joblib
+Reloaded predictions exactly match original predictions: True
+
+TASK 8C — PREMIUM RETENTION LIST
+Premium customers in test split: 40
+Rows in list: 10
+Actually lapsed in list: 1
+customer_id  lapse_probability  actually_lapsed
+      C0862           0.491035                0
+      C1112           0.484067                0
+      C0060           0.479796                0
+      C0802           0.479642                0
+      C1008           0.477817                0
+      C1000           0.462420                0
+      C0525           0.459718                1
+      C0133           0.456237                0
+      C0267           0.452514                0
+      C0167           0.452159                0
+The retention list is illustrative, not a leakage-free evaluation, because Premium is a post-hoc whole-window label that includes the September label window. Predictive features still use only pre-cutoff orders.

@@ -1,0 +1,46 @@
+PART A: EXPLORATORY DATA ANALYSIS
+
+Dataset overview:
+The cleaned dataset contains 1,200 customers, 40 products, and 12,309 orders.
+There are 11,110 completed orders with total revenue of INR 2,998,668.80.
+
+Completed order amount distribution:
+Mean: INR 269.91
+Median: INR 135.00
+Skewness: 4.61
+Q1: INR 64.80
+Q3: INR 297.00
+IQR: INR 232.20
+Lower IQR fence: INR -283.50
+Upper IQR fence: INR 645.30
+Outliers below lower fence: 0
+Outliers above upper fence: 897
+
+Correlation matrix:
+                  order_amount  discount_pct  quantity  delivery_minutes
+order_amount            1.0000       -0.0951    0.0873           -0.0031
+discount_pct           -0.0951        1.0000   -0.0004           -0.0098
+quantity                0.0873       -0.0004    1.0000           -0.0126
+delivery_minutes       -0.0031       -0.0098   -0.0126            1.0000
+Correlations indicate associations and do not establish causal relationships.
+
+Revenue by city:
+           completed_revenue  mean_order_amount  completed_order_count
+city                                                                  
+Bengaluru          523643.40             276.47                   1894
+Chennai            463629.15             272.72                   1700
+Delhi              502829.80             243.62                   2064
+Hyderabad          528589.90             284.95                   1855
+Mumbai             479058.50             297.00                   1613
+Pune               500918.05             252.48                   1984
+
+Revenue by city and category:
+category       Dairy  Electronics    Grocery  Personal Care     Snacks         All
+city                                                                              
+Bengaluru   87075.05    233909.45  110915.65       20193.85   71549.40   523643.40
+Chennai     78301.80    195508.80   93817.45       27675.40   68325.70   463629.15
+Delhi      117271.70    158549.10  112658.05       23471.50   90879.45   502829.80
+Hyderabad   83731.00    228913.10  109475.40       24800.05   81670.35   528589.90
+Mumbai      75209.85    214738.40   78970.15       38018.00   72122.10   479058.50
+Pune        90349.55    187629.25  108456.60       34275.15   80207.50   500918.05
+All        531938.95   1219248.10  614293.30      168433.95  464754.50  2998668.80

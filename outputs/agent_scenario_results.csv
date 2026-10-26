@@ -1,0 +1,8 @@
+scenario_id,status,refund_inr,llm_calls,tokens_used,final_answer,run_id
+S1,REFUND,128.25,5,1417,REFUND: INR 128.25 issued.,S1_e5de1a85
+S2,REFUND,135.0,5,1417,REFUND: INR 135.0 issued.,S2_b3100a05
+S3,ESCALATE,1999.0,5,1404,ESCALATE: refund above INR 1000 sent to a human lead.,S3_136cb85b
+S4,DENIED,,4,1021,DENIED: delivery was within 45 minutes.,S4_b506be5a
+S5,DENIED,,3,649,DENIED: only completed orders can be refunded.,S5_fbc4cd91
+S6,NOT_FOUND,,2,280,NOT_FOUND: no such order.,S6_becf058d
+S7,FALLBACK_MAX_ITERATIONS,,6,3624,FALLBACK_MAX_ITERATIONS: Please hand this request to a human agent; the step limit was reached.,S7_4d196cc6

@@ -1,0 +1,22 @@
+{
+  "run_id": "S1_TIMEOUT_DEMO_50dc71e1",
+  "scenario_id": "S1_TIMEOUT_DEMO",
+  "user_message": "My order ORD-100048 reached me very late. I would like a refund.",
+  "messages": [
+    {
+      "role": "system",
+      "content": "AGENT\nYou are an Instamart refund agent. Use the supplied tools to check orders\nand policies before deciding. Never invent an order or refund amount.\nOnly completed orders delivered in more than 45 minutes qualify.\nRefunds up to INR 1000 may be issued automatically. Refunds above INR 1000\nmust be escalated to a human and must not be issued automatically.\nCancelled and on-time orders must not receive refunds.\nIf a tool reports an error, respect it. Return a concise final answer\nbeginning with REFUND:, ESCALATE:, DENIED:, or NOT_FOUND: as appropriate."
+    },
+    {
+      "role": "user",
+      "content": "My order ORD-100048 reached me very late. I would like a refund."
+    }
+  ],
+  "tokens_used": 0,
+  "llm_calls": 0,
+  "steps": [],
+  "executed_tools": [],
+  "finished": true,
+  "status": "FALLBACK_TIMEOUT",
+  "final_answer": "FALLBACK_TIMEOUT: Please hand this request to a human agent; the time limit was reached."
+}
